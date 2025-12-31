@@ -307,7 +307,7 @@ impl<'a> Handle<'a> {
         self.handle_response(response.inner.response, ui)
     }
 
-    fn handle_response(&mut self, response: egui::Response, ui: &mut Ui) -> egui::Response {
+    pub fn handle_response(&mut self, response: egui::Response, ui: &mut Ui) -> egui::Response {
         let response = if let Some(sense) = self.sense {
             response.interact(sense)
         } else {
